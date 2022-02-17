@@ -1,3 +1,4 @@
+from asyncio import create_subprocess_exec
 import random
 import math
 class Room:
@@ -89,8 +90,8 @@ def loadRoom(Map, dir):
         newRoom.content=-1
     if(content>=0.65):
         print("You enter the room and a dark mist fills the air..\n")
-        Enemy=Creature(PickOne(["goblin"]))
-        print("You look around and as the fog starts to vanish you can clearly see the outline of a "+Enemy.name+"..")
+        Enemy=Creature(PickOne(["goblin","GIGACHAD"]))
+        print("You look around and as the fog starts to sh you can clearly see the outline of a "+Enemy.name+"..")
         print("You'll need to fight it to get along.")
         newRoom.content=-1
     return newRoom,placedItem,Enemy
@@ -127,6 +128,10 @@ class Creature:
                 self.Health=30
                 self.Damage=3
                 self.name="goblin"
+            case "GIGACHAD":
+                self.Health=690
+                self.Damage=420
+                self.name="GIGACHAD"
                 
 class Item:
     def __init__(self,name,p,t):
